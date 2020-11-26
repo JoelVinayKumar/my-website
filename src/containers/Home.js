@@ -1,15 +1,38 @@
 import React from 'react';
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { SiderMenu } from '../components'
+import { SiderMenu, ProfileSection } from '../components';
+import { Education, Projects, Experience } from '../containers';
+
+const Intro = () => (
+  <section style={{ width:'450px' }}>
+    <h3>I'm a full stack developer</h3>
+    <p>I wander out internet worlds</p>
+  </section>
+)
 
 export const Home = () => {
   return (
+    <Router>
     <YellowSlate>
       <MainSlate>
-        <SiderMenu />
+        <InnerDiv>
+          <Left>
+            <SiderMenu />
+            <div style={{width:'50px'}} />
+              <Switch>
+                <Route exact path="/" component={Intro} />
+                <Route exact path="/education" component={Education} />
+                <Route exact path="/projects" component={Projects} />
+                <Route exact path="/experience" component={Experience} />
+              </Switch>
+          </Left>
+          <ProfileSection />
+        </InnerDiv>
       </MainSlate>
     </YellowSlate>
+    </Router>
   );
 }
 
@@ -28,4 +51,21 @@ const MainSlate = styled.div`
   width: calc(100vw - 25px);
   background-color: #F1F1F1;
   border-radius: 20px;
+  display: flex;
+  justify-content: center;
+`;
+
+const InnerDiv = styled.div`
+  width: 80vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 100px; 
+  overflow: hidden;
+`;
+
+const Left = styled.div`
+  max-width: 65vw;
+  display: flex;
+  justify-content: space-between;
 `;

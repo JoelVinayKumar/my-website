@@ -8,22 +8,24 @@ export const SiderMenu = () => {
   return (
     <Container>
       <NavLink to="/" ><L text="Home" /></NavLink>
+      <NavLink to="/education" ><L text="Education" /></NavLink>
+      <NavLink to="/skills" ><L text="Skills" /></NavLink>
+      <NavLink to="/projects" ><L text="Projects" /></NavLink>
+      <NavLink to="/experience" ><L text="Experience" /></NavLink>
+      <NavLink to="/writings" ><L text="Writings" /></NavLink>
     </Container>
   );
 }
 
 const Container = styled.div`
   background-color: white;
-  width: 170px;
-  height: 400px;
+  width: 120px;
+  height: 280px;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 30px;
-  position: absolute;
-  left: 100px;
-  top: 80px;
+  padding: 30px;
 `;
 
 const NavLink = styled(Link)`

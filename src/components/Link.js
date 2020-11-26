@@ -10,9 +10,10 @@ export const Link = ({ text }) => {
 const Text = styled.p`
   position: relative;
   z-index: 1;
-  font-size: 18px;
+  font-size: 14px;
   cursor: pointer;
   text-decoration: none;
+  color: black;
 
   &:after {
     background-color: #FFF591;

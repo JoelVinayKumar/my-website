@@ -1,2 +1,5 @@
 export * from './SiderMenu'
 export * from './Link'
+export * from './ProfileSection'
+export * from './CheckPoint'
+export * from './Post'
